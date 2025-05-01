@@ -1,4 +1,5 @@
 const { app, BrowserWindow } = require('electron')
+const path = require('path');
 
 const ALLOWED_URLS = [
     'https://gemini.google.com/',
@@ -9,14 +10,14 @@ const createWindow = () => {
     const win = new BrowserWindow({
         width: 800,
         height: 600,
-        autoHideMenuBar: true, // Elrejti a menüsávot
+        autoHideMenuBar: true,
         webPreferences: {
             devTools: false,
             sandbox: true,
             contextIsolation: true
         },
         title: "Gemini ✴️"
-    })
+    });
 
     // Force the title to stay as "Gemini" even if page changes it
     win.on('page-title-updated', (e) => {
