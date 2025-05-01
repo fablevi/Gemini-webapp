@@ -1,0 +1,46 @@
+{
+  "name": "google_gemini_electronapp",
+  "version": "1.0.0",
+  "description": "Web app to Gemini AI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "build": "electron-builder --linux"
+  },
+  "build": {
+    "appId": "com.example.myapp",
+    "productName": "Gemini Electron App",
+    "linux": {
+      "target": [
+        "deb",
+        "snap"
+      ],
+      "category": "Utility",
+      "icon": "build/icon.png",
+      "synopsis": "My Awesome Electron App",
+      "description": "A simple Electron application for Linux."
+    },
+    "flatpak": {
+      "id": "com.example.myapp",
+      "runtime": "org.freedesktop.Platform",
+      "runtimeVersion": "22.08",
+      "sdk": "org.freedesktop.Sdk"
+    },
+    "snap": {
+      "confinement": "strict",
+      "plugs": [
+        "default",
+        "home",
+        "network",
+        "opengl"
+      ]
+    }
+  },
+  "author": "fablevi",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^28.1.0",
+    "electron-builder": "^24.9.1"
+  }
+}
