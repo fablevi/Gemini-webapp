@@ -11,10 +11,10 @@
   "build": {
     "appId": "Gemini.Electron.Webapp",
     "productName": "Gemini Electron App",
+    "executableName": "gemini-electron",
     "linux": {
       "target": [
-        "deb",
-        "snap"
+        "AppImage"
       ],
       "category": "AI",
       "icon": "Gemini_icon.png",

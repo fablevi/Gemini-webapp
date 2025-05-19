@@ -1,6 +1,8 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('path');
 
+app.commandLine.appendSwitch("--no-sandbox");
+
 const ALLOWED_URLS = [
     'https://gemini.google.com/',
     'https://accounts.google.com/'
@@ -13,7 +15,7 @@ const createWindow = () => {
         autoHideMenuBar: true,
         webPreferences: {
             devTools: false,
-            sandbox: true,
+            sandbox: false,
             contextIsolation: true
         },
         title: "Gemini ✴️"
